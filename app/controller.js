@@ -7,6 +7,7 @@ import okDialog from './ui/okDialog';
 import copyDialog from './ui/copyDialog';
 import shareDialog from './ui/shareDialog';
 import signupDialog from './ui/signupDialog';
+import surveyDialog from './ui/surveyDialog';
 
 export default function(state, emitter) {
   let lastRender = 0;
@@ -279,6 +280,20 @@ export default function(state, emitter) {
   emitter.on('copy', ({ url }) => {
     copyToClipboard(url);
     // metrics.copiedLink({ location });
+  });
+
+  emitter.on('closeModal', () => {
+    if (
+      ['copy', 'share'].includes(state.modal.type) &&
+      document.querySelector('html').lang.startsWith('en') &&
+      !state.user.surveyed
+    ) {
+      state.user.surveyed = true;
+      state.modal = surveyDialog();
+    } else {
+      state.modal = null;
+    }
+    render();
   });
 
   setInterval(() => {
