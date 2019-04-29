@@ -46,7 +46,7 @@ const conf = convict({
   },
   anon_max_downloads: {
     format: Number,
-    default: 5,
+    default: 100,
     env: 'ANON_MAX_DOWNLOADS'
   },
   max_files_per_archive: {

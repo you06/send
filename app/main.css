@@ -288,3 +288,7 @@ select {
 .word-break-all {
   word-break: break-all;
 }
+
+.header-logo {
+  height: 36px;
+}

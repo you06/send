@@ -98,7 +98,7 @@ export default async function getCapabilities() {
     navigator.standalone;
 
   return {
-    account,
+    account: false,
     crypto,
     serviceWorker,
     streamUpload: nativeStreams || polyStreams,

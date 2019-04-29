@@ -155,6 +155,7 @@
     "redis": "^2.8.0",
     "selenium-standalone": "^6.15.6",
     "ua-parser-js": "^0.7.19",
+    "webcrypto-core": "^1.0.12",
     "websocket-stream": "^5.5.0"
   },
   "availableLanguages": [
